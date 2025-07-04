@@ -23,7 +23,7 @@ schema_list:
 
 # 菜单
 menu:
-  page_size: 5  # 候选词个数
+  page_size: 9  # 候选词个数
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
   # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键（注意在雾凇中，大写字母也作为编码了）
 
@@ -33,8 +33,8 @@ switcher:
   caption: 「方案选单」
   hotkeys:
     - F4
-    - Control+grave
-    - Control+Shift+grave
+    # - Control+grave
+    # - Control+Shift+grave
     # - Alt+grave
   save_options:  # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
     - ascii_punct
@@ -175,16 +175,16 @@ key_binder:
   select_last_character: "bracketright"  # 右中括号 ]
 
   bindings:
-    # Tab / Shift+Tab 切换光标至下/上一个拼音
-    - { when: composing, accept: Shift+Tab, send: Shift+Left }
-    - { when: composing, accept: Tab, send: Shift+Right }
+    # Tab / Shift+Tab 切换光标至下/上一个拼音 
+    # - { when: composing, accept: Shift+Tab, send: Shift+Left }
+    - { when: composing, accept: Tab, send: Right }
     # Tab / Shift+Tab 翻页
     # - { when: has_menu, accept: Shift+Tab, send: Page_Up }
     # - { when: has_menu, accept: Tab, send: Page_Down }
 
     # Option/Alt + ←/→ 切换光标至下/上一个拼音
-    - { when: composing, accept: Alt+Left, send: Shift+Left }
-    - { when: composing, accept: Alt+Right, send: Shift+Right }
+    # - { when: composing, accept: Alt+Left, send: Shift+Left }
+    # - { when: composing, accept: Alt+Right, send: Shift+Right }
 
     # 翻页 - =
     - { when: has_menu, accept: minus, send: Page_Up }  # 上一页设置为 paging 时会导致直接上屏并输出减号
@@ -206,8 +206,8 @@ key_binder:
     # - { when: always, toggle: ascii_mode, accept: Control+Shift+at }            # 切换中英
     - { when: always, toggle: ascii_punct, accept: Control+Shift+3 }              # 切换中英标点
     - { when: always, toggle: ascii_punct, accept: Control+Shift+numbersign }     # 切换中英标点
-    - { when: always, toggle: traditionalization, accept: Control+Shift+4 }       # 切换简繁
-    - { when: always, toggle: traditionalization, accept: Control+Shift+dollar }  # 切换简繁
+    # - { when: always, toggle: traditionalization, accept: Control+Shift+4 }       # 切换简繁
+    # - { when: always, toggle: traditionalization, accept: Control+Shift+dollar }  # 切换简繁
     # - { when: always, toggle: full_shape, accept: Control+Shift+5 }             # 切换全半角
     # - { when: always, toggle: full_shape, accept: Control+Shift+percent }       # 切换全半角
 
